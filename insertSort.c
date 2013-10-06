@@ -35,7 +35,7 @@ main()
 	printf("Time for thread sort: %f\n", (double)timer/CLOCKS_PER_SEC);
 	//printf("\n");
 	recordFile();
-    delete[] array;
+    	delete[] array;
 	
 	readFile();
 	timer1 = clock();
