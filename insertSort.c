@@ -29,7 +29,7 @@ main()
 	struct parms first = {0, length / 2};
 	struct parms second = {length / 2, length};
 	struct timespec startThread;
-    clock_gettime(1, &startThread);
+    	clock_gettime(1, &startThread);
 	pthread_create(&firstThr, NULL, threadFunc, &first);
 	pthread_create(&secondThr, NULL, threadFunc, &second);
 	pthread_join(firstThr, NULL);
@@ -38,16 +38,16 @@ main()
 	mergeArray(final);
 	struct timespec stopThread;
 	clock_gettime(1, &stopThread);
-    printf("ThreadSort: %d sec %lu nanosec\n", abs(stopThread.tv_sec - startThread.tv_sec), labs(stopThread.tv_nsec - startThread.tv_nsec));
-    recordFile(final);
+    	printf("ThreadSort: %d sec %lu nanosec\n", abs(stopThread.tv_sec - startThread.tv_sec), labs(stopThread.tv_nsec - startThread.tv_nsec));
+	recordFile(final);
 	
 	readFile();
 	struct timespec startSort;
-    clock_gettime(1, &startSort);
+    	clock_gettime(1, &startSort);
 	sort(0, length);
 	struct timespec stopSort;
 	clock_gettime(1, &stopSort);
-    printf("ThreadSort: %d sec %lu nanosec\n", abs(stopSort.tv_sec - startSort.tv_sec), labs(stopSort.tv_nsec - startSort.tv_nsec));
+    	printf("ThreadSort: %d sec %lu nanosec\n", abs(stopSort.tv_sec - startSort.tv_sec), labs(stopSort.tv_nsec - startSort.tv_nsec));
 	recordFile1();
 }
 
