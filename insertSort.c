@@ -114,7 +114,7 @@ void sort(int start, int end)
 
 	void mergeArray(int *newArr){
 	int c1 = 0, c2 = length / 2;
-    for (int i = 0; i < length; i++) {
+    	for (int i = 0; i < length; i++) {
         if (c1 < length / 2 && c2 <= length) {
             newArr[i] = array[c1] > array[c2] ? array[c2++] : array[c1++];
         }	
